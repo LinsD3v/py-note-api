@@ -1,0 +1,37 @@
+endpoints REST para o projeto "Gerenciador de Notas"
+
+📘 Estrutura da Nota
+{
+  "id": 1,
+  "titulo": "Estudar FastAPI",
+  "conteudo": "Praticar CRUD com SQLAlchemy",
+  "data_criacao": "2025-07-31T10:00:00"
+}
+
+
+🚀 Endpoints REST
+🔹 GET /notas
+Lista todas as notas
+
+Query opcional: ?busca=palavra
+
+Exemplo: /notas?busca=fastapi
+
+🔹 GET /notas/{id}
+Retorna uma nota específica
+
+🔹 POST /notas
+Cria uma nova nota
+
+Body:
+{
+  "titulo": "Nova nota",
+  "conteudo": "Conteúdo da nota"
+}
+🔹 PUT /notas/{id}
+Atualiza uma nota existente
+
+Body: igual ao POST
+
+🔹 DELETE /notas/{id}
+Deleta a nota pelo ID
