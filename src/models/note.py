@@ -7,5 +7,5 @@ class Notes(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(100), index=True)
-    desc = Column(Text)
-    creation_date = Column(DateTime, default=datetime.now)
+    content = Column(Text)
+    insert_date = Column(DateTime, default=datetime.utcnow)
