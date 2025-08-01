@@ -9,5 +9,8 @@ def create_note(db:Session, note: NoteCreate):
     db.refresh(db_note)
     return db_note
 
+def get_all_notes(db: Session):
+    return db.query(Notes).all()
+
 def get_note(db: Session, note_id: int):
     return db.query(Notes).filter(Notes.id == note_id).first()
