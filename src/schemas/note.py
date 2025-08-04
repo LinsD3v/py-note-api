@@ -19,3 +19,4 @@ class NoteOut(BaseModel):
 class NoteUpdate(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
+    
