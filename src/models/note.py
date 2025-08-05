@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, DateTime, Text
+from sqlalchemy import Column, Integer, String, DateTime, Text, ForeignKey
+from sqlalchemy.orm import relationship
 from datetime import datetime
 from database import Base
+from models.user import Users
 
 class Notes(Base):
     __tablename__ = "Notes"
@@ -9,3 +11,6 @@ class Notes(Base):
     title = Column(String(100), index=True)
     content = Column(Text)
     insert_date = Column(DateTime, default=datetime.utcnow)
+    owner_id = Column(Integer, ForeignKey(Users.id))
+
+    owner = relationship("Users", back_populates="notes_ids")

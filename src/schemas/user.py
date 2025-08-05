@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, List
 
 class UserCreate(BaseModel):
     username: str
@@ -13,6 +13,7 @@ class UserOut(BaseModel):
     email: str
     hashd_password: str
     description: Optional[str]
+    notes: List[int]
     
     class Config:
         orm_mode: True
